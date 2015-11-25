@@ -1,0 +1,36 @@
+.ui-layout-unit
+{
+	border: none !important;
+}
+.link
+{
+	font-weight:bold;
+	font-family: "Calibiri";
+}
+.dtable .ui-dialog-title-dialog
+{
+	font-family: "Calibiri";
+}
+.columntext
+{
+	font-family: "Calibiri";
+}
+.address
+{
+	 font-size: 75%;
+	 color: grey;
+	 font-weight:bold;
+}
+.detail_link
+{
+	 font-weight:bold;
+	text-align: right;
+}
+.footer
+{
+	text-align: center;
+	font-family: "Calibiri";
+	background-color:#006699;
+	color: #FFCC00;
+	font-weight:bold;
+}

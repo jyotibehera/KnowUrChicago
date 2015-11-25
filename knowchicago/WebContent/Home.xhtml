@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    
+	<h:head>
+		<script src="http://maps.google.com/maps/api/js?sensor=true|false" type="text/javascript"></script>
+		<h:outputStylesheet library="css" name="Custom.css" />
+	</h:head> 
+	
+       <h:body>
+       		
+       		<p:layout fullPage="true">
+       			
+       			<p:layoutUnit position="north" size="210">
+						
+						<p:graphicImage name="/images/ChicagoSkyline.jpg"  width="100%" height="75%" />
+
+						<p:link href ="/faces/Home.xhtml"
+						value ="Home"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PoliceStation.xhtml"
+						value ="Police Station"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/FoodInspection.xhtml"
+						value ="Food Inspection"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/CrimeSearchHome.xhtml"
+						value ="Crime"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/TowedVehicleHome.xhtml"
+						value ="Towed Vehicles"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PublicHealthStatsHome.xhtml"
+						value ="Public Health Statitics"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						
+				<p:separator/>
+			</p:layoutUnit>
+       			
+       			<p:layoutUnit position="center">
+       			
+       				<p:layout>
+       					
+       					<p:layoutUnit position="center">
+       					
+       						<h:form>
+							
+							
+							<div class="info">
+								
+								<h4>Police Station</h4>
+								<p class="pinfo">
+								It provides Chicago Police district station locations, contact information and access to their individual websites.
+								</p>
+								
+							</div>
+							
+							<br/>
+							
+							<div class="info">
+								<p>
+								<h4>Crime</h4>
+									This reflects reported incidents of crime (with the exception of murders where data exists for 
+									each victim) that occurred in the City of Chicago from 2001 to present,excluding the most recent 
+									seven days. Data is extracted from the Chicago Police Department's CLEAR (Citizen Law Enforcement 
+									Analysis and Reporting) system. In order to protect the privacy of crime victims, addresses are 
+									shown at the block level only and specific locations are not identified.
+								</p>
+							</div>
+							
+							<br/>
+							
+							<div class="info"> 
+								<p >
+								<h4>Food Inspection</h4>
+								This information is derived from inspections of restaurants and other food establishments in 
+								Chicago from January 1, 2010 to the present. Inspections are performed by staff from the 
+								Chicago Department of Public Health’s Food Protection Program using a standardized procedure. 
+								The results of the inspection are input into a database, then reviewed and approved by a 
+								State of Illinois Licensed Environmental Health Practitioner (LEHP).
+							    </p>
+							</div>
+							
+							<br/>
+							
+							<div class="info">
+								<p>
+									<h4>Towed Vehicles</h4> 
+									This displays location for vehicles that have been towed and impounded by the City of Chicago within the last 90 days. Illegally 
+									parked vehicles, abandoned vehicles and vehicles used for illegal activities may be towed by the Chicago Police Department, the 
+									Department of Streets and Sanitation, the Department of Revenue, Aviation and the office of the City Clerk. After a tow request is 
+									issued, an inventory number is assigned by the Department of Streets and Sanitation and a truck is dispatched to tow the requested 
+									vehicle to a City auto pound. 
+									Disclaimer: This data set includes vehicles towed or relocated by the City of Chicago. It does not include vehicles towed by a private 
+									towing company.
+						 	  </p>
+							
+						 	</div>
+						 	
+							<br/>
+							<div class="info">
+								<p>
+									<h4>Public Health Statistics</h4>
+									It is a selection of 27 indicators of public health significance by Chicago community area, with the most updated information 
+									available. The indicators are rates, percents, or other measures related to natality, mortality, infectious disease, lead poisoning, 
+									and economic status. 
+									Disclaimers: IDPH specifically disclaims responsibility for any analysis, interpretations, or conclusions. The population counts and 
+									socio-economic measures used in certain calculations are estimates, and this potential source of error should be taken into account 
+									when considering the precision of the indicators.
+							   </p>
+							</div>
+													
+						</h:form>
+					
+       					
+       					</p:layoutUnit>
+       					
+       					<p:layoutUnit position="east" size="400">
+       					
+       						<p:feedReader value="https://www.dnainfo.com/chicago/index/all" var="feed">
+    						<h:outputText value="#{feed.title}" style="font-weight: bold;display:block" styleClass="newsfeed"/>
+    						<h:outputText value="#{feed.description.value}" escape="false" styleClass="newsfeed"/>
+    						<p:separator />
+						</p:feedReader>
+       					
+       					</p:layoutUnit>
+       				
+       				</p:layout>
+       			
+       			</p:layoutUnit>
+       			
+       			<p:layoutUnit position="south" size="35" >
+       			<div class="footer">Designed by:  Jyoti Behera (Northeastern Illinois University)</div>
+       			</p:layoutUnit>
+       		</p:layout>
+       
+       </h:body>
+</html>

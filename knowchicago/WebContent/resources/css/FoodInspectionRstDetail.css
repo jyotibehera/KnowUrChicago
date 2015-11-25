@@ -1,0 +1,31 @@
+.ui-layout-unit
+{
+	border: none !important;
+}
+.link
+{
+	font-weight:bold;
+	font-family: "Calibiri";
+}
+.table
+{
+	font-family: "Calibiri";
+	 border-collapse:collapse
+}
+.bold
+{
+	font-weight: bold;
+}
+.table table thead tr
+{
+    display: none;
+    border: none;
+}
+.footer
+{
+	text-align: center;
+	font-family: "Calibiri";
+	background-color:#006699;
+	color: #FFCC00;
+	font-weight:bold;
+}

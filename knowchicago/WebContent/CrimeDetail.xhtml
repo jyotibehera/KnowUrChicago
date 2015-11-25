@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<script src="http://maps.google.com/maps/api/js?sensor=true|false" type="text/javascript"></script>
+		<h:outputStylesheet library="css" name="CrimeDetail.css" />
+	</h:head>
+	
+	<h:body>
+		<p:layout style="width:100%;height:100%;" fullPage="true">
+		
+		<p:layoutUnit position="north" size="210">
+						
+						<p:graphicImage name="/images/ChicagoSkyline.jpg"  width="100%" height="75%" />
+						
+						<p:link href ="/faces/Home.xhtml"
+						value ="Home"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PoliceStation.xhtml"
+						value ="Police Station"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/FoodInspection.xhtml"
+						value ="Food Inspection"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/CrimeSearchHome.xhtml"
+						value ="Crime"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/TowedVehicleHome.xhtml"
+						value ="Towed Vehicles"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PublicHealthStatsHome.xhtml"
+						value ="Public Health Statitics"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						
+				<p:separator/>
+			</p:layoutUnit>
+		
+			<p:layoutUnit position="center">
+			
+				<h:form>
+				
+					<p:dataTable var="crimelist" value="#{CrimeDetailBn.crlist}" styleClass="table">
+						
+						<p:column>
+						
+							<table class="columntable">
+							
+								<tr>
+									<td>
+										Case Number :<h:outputText  value= " #{crimelist.casenumber}"/><br/>
+										Crime :<h:outputText  value= " #{crimelist.crimetype}"/><br/>
+										Description :<h:outputText  value= " #{crimelist.crimedescription}"/><br/><br/>
+									</td>
+									
+									<td>
+										<table>
+									
+											<tr>
+												<td>Location</td>
+												<td><h:outputText  value= "#{crimelist.location}"/></td>
+											</tr>
+											
+											<tr>
+												<td>Ward Number</td>
+												<td><h:outputText  value= "#{crimelist.ward}"/></td>
+											</tr>
+											
+											<tr>
+												<td>Community</td>
+												<td><h:outputText  value= "#{crimelist.community}"/></td>
+											</tr>
+											
+											<tr>
+												<td>Arrest</td>
+												<td><h:outputText  value= "#{crimelist.arrest}"/></td>
+											</tr>
+											
+											<tr>
+												<td>Domestic</td>
+												<td><h:outputText  value= "#{crimelist.domestic}"/></td>
+											</tr>
+										
+										</table>
+								
+									</td>
+								
+								</tr>
+							
+							</table>
+					
+						</p:column>
+					</p:dataTable>
+				
+				</h:form>
+			
+			</p:layoutUnit>
+			
+			<p:layoutUnit position="east" size="600">
+			
+				<p:gmap model="#{CrimeDetailBn.cmap}"
+								center="#{CrimeDetailBn.center1},#{CrimeDetailBn.center2}" 
+								zoom="12"
+								type="map"
+								streetView="true"
+								style="height:95%;width:95%;"/>
+			
+			</p:layoutUnit>
+		<p:layoutUnit position="south" size="35" >
+       			<div class="footer">Designed by:  Jyoti Behera (Northeastern Illinois University)</div>
+       			</p:layoutUnit>
+		</p:layout>
+	
+	</h:body>
+</html>

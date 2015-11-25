@@ -1,0 +1,51 @@
+.ui-layout
+{
+	
+}
+.ui-layout-unit
+{
+	border: none !important;
+}
+
+.footer
+{
+	text-align: center;
+	font-family: "Calibiri";
+	background-color:#006699;
+	color: #FFCC00;
+	font-weight:bold;
+}
+
+.ui-layout-east
+{
+	width:500px;
+    height:800px;
+    right: 0px;
+}
+.link
+{
+	font-weight:bold;
+	font-family: "Calibiri";
+}
+.table
+{
+	font-family: "Calibiri";
+	 border-collapse:collapse
+}
+.address
+{
+	 font-size: 75%;
+	 color: grey;
+	 font-weight:bold;
+}
+.ph
+{
+	text-align:right;
+	font-weight:bold;
+	font-size: 150%;
+}
+.tablelink
+{
+	text-align:right;
+	font-family: "Calibiri";
+}

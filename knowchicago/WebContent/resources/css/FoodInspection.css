@@ -1,0 +1,92 @@
+.ui-layout-center
+{
+	border-left:none !important;
+	border-top:none !important;
+	border-bottom:none !important;
+	 border-right: thick solid #000000;
+}
+.ui-layout-north
+{
+	
+	border: none !important;
+}
+
+.autocompzip
+{
+	margin-left: 30px;
+}
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 5px;
+  padding: 2px 2px 2px 2px;
+  text-decoration: none;
+  margin-left: 140px;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.wrapdata
+{
+	margin-top: 100px;
+	margin-left: 380px;
+	width: 450px;
+	height:150px;
+	background: linear-gradient(#FFFFA6, white);
+	border-radius: 10px;
+}
+.link
+{
+	font-weight:bold;
+	font-family: "Calibiri";
+}
+.hover
+{
+	font-weight:bold;
+	font-family: "Calibiri";
+	color: green;
+	 font-size: 100%;
+}
+.table
+{
+	text-align: left;	
+}
+.labelzip
+{
+	margin-top:20px;
+	margin-left: 60px;
+}
+.inputzip
+{
+	margin-top:20px;
+	margin-left: 30px;
+}
+.footer
+{
+	text-align: center;
+	font-family: "Calibiri";
+	background-color:#006699;
+	color: #FFCC00;
+	font-weight:bold;
+}
+.newsfeed
+{
+	font-family: "Calibiri";
+}

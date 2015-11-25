@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<script src="http://maps.google.com/maps/api/js?sensor=true|false" type="text/javascript"></script>
+		<script type="text/javascript">
+    	function pieExtender() {
+        	this.cfg.highlighter = {
+            show: true,
+            tooltipLocation: 'n',
+            useAxesFormatters: false,
+            formatString: '%s = %d'
+        };
+    }
+</script>
+		<h:outputStylesheet library="css" name="CrimeSearch.css" />
+	</h:head>
+	
+	<h:body>
+	
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" size="210">
+						
+						<p:graphicImage name="/images/ChicagoSkyline.jpg"  width="100%" height="75%" />
+
+						<p:link href ="/faces/Home.xhtml"
+						value ="Home"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PoliceStation.xhtml"
+						value ="Police Station"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/FoodInspection.xhtml"
+						value ="Food Inspection"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/CrimeSearchHome.xhtml"
+						value ="Crime"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/TowedVehicleHome.xhtml"
+						value ="Towed Vehicles"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						
+						<p:link href ="/faces/PublicHealthStatsHome.xhtml"
+						value ="Public Health Statitics"
+						target="_self" styleClass="link" style="color:#0000CD"></p:link>
+						
+				<p:separator/>
+			</p:layoutUnit>
+		
+			<p:layoutUnit position="center">
+			
+				<h:form>
+					<p:chart type="pie" 
+							model="#{CrimeChart.piemodel}" 
+							style="width:380px;height:380px;" 
+							styleClass="piechart" 
+							responsive="true"							
+							/>
+				</h:form>
+			
+			</p:layoutUnit>
+			
+			<p:layoutUnit position="east" size="750">
+			
+				<p:layout>
+				
+					<p:layoutUnit position="center">
+					
+						<p:chart type="line" model="#{CrimeChart.linemodel}" style="width:550px;height:240px;" styleClass="bar" />
+					
+					</p:layoutUnit>
+					
+					<p:layoutUnit position="south" size="140">
+					
+						<fieldset class="wrapdata">
+						
+						
+						<h:form id="CrimesearchFrmBlk">
+							
+							
+								<h:outputLabel for="blk" value="Block: "/>
+								
+								<p:selectOneMenu id="blk" value="" effect="fold" editable="false" required="true">
+            						&nbsp;&nbsp;<f:selectItem itemLabel="Select One" itemValue="" />
+            						<f:selectItems value="#{CrimeChart.blocklist}" />
+        						</p:selectOneMenu>
+        						
+        						&nbsp;&nbsp;
+        						<p:graphicImage id="ques1" name="/images/question.jpg" width="4%" height="5%"  />
+		      					<p:tooltip id="tooltip1" for="ques1" 
+		      							   value="Please choose a block name." styleClass="hover"/>
+        						
+        						<h:inputHidden id="dist" value="#{CrimeChart.dist}" />
+        						<h:inputHidden id="yr" value="#{CrimeChart.yr}"/>
+								
+								<br/>
+								<br/>
+			
+								<button type="submit" formaction="CrimeDetail.xhtml" formtarget="_blank" class="btn">Submit</button>
+								
+							
+							
+						</h:form>
+						</fieldset>
+					
+					</p:layoutUnit>
+				
+				</p:layout>
+			
+			</p:layoutUnit>
+			<p:layoutUnit position="south" size="35" >
+       			<div class="footer">Designed by:  Jyoti Behera (Northeastern Illinois University)</div>
+       			</p:layoutUnit>
+</p:layout>
+</h:body>
+</html>
